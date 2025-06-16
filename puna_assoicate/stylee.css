@@ -427,7 +427,11 @@ body {
     filter: grayscale(100%);
     animation: fadeInLeft 1.2s ease-out;
 }
-
+@media (max-width: 600px) {
+    .founder-image img {
+        max-width: 100%; /* Allow full width on small screens */
+    }
+}
 .founder-text {
     max-width: 700px;
     animation: fadeInRight 1.2s ease-out;

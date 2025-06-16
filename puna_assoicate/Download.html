@@ -57,7 +57,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-height: 60vh;
+  min-height: 50vh;
   margin-top: 40px;
 }
 .accordion {
@@ -151,6 +151,83 @@ a:hover {
   75% {
     transform: rotate(90deg) translate(-.25rem);
   }
+}
+/* form style */
+.input-icon-group {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    min-width: 200px;
+    margin-right: 1%;
+    margin-bottom: 18px;
+    vertical-align: top;
+}
+.input-icon-group:last-child {
+    margin-right: 0;
+}
+.input-icon-group i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color:#3b5fbf;
+    /* color: linear-gradient(to right, #686ee2, #33388d); */
+    font-size: 18px;
+    pointer-events: none;
+    z-index: 2;
+}
+.input-icon-group input,
+.input-icon-group select {
+    width: 100%;
+    padding: 12px 12px 12px 40px; /* left padding for icon */
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+.input-icon-group input:focus,
+.input-icon-group select:focus {
+    border-color: #d32f2f;
+    box-shadow: 0 0 0 2px #ffd6d6;
+}
+.contact-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+}
+.submit-btn {
+    grid-column: 1 / -1;
+    padding: 14px;
+    background: #3b5fbf;;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 50%;
+}
+
+.submit-btn:hover {
+    background: #c0392b;
+}
+@media (max-width: 900px) {
+    .contact-form-row, .input-icon-group {
+        width: 100%;
+        min-width: 0;
+        margin-right: 0;
+        display: block;
+    }
+}
+.toast-success .toast-icon,
+.toast-info .toast-icon,
+.toast-warning .toast-icon,
+.toast-error .toast-icon {
+    display: none !important;
 }
 
 </style>
@@ -247,7 +324,7 @@ a:hover {
                     <a href="EventCalendar.html" target="_blank">Blogs</a>
             </div>
             </li>
-            <li><a href="Career.html" target="_blank">CAREERS</a></li>
+<li><a href="Transport.html" target="_blank">TRANSPORT</a></li>
             <li><a href="Download.html">DOWNLOAD</a></li>
             <li><a href="contact.html" target="_blank">CONTACT US</a></li>
         </ul>
@@ -332,8 +409,53 @@ a:hover {
     </div>
   </div>
 </div>
+
   </section>
 </div>
+ <div class="form-container">
+        <h3 style="text-align: center; color:#3b5fbf ">Careers in Electrical Shops</h3><br>
+    <form id="careerForm" style="text-align: center;">
+    <div class="input-icon-group">
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="Your Name" required>
+    </div>
+    <div class="input-icon-group">
+        <i class="fa fa-phone"></i>
+        <input type="tel" placeholder="Phone Number" required>
+    </div>
+    <div class="input-icon-group">
+        <i class="fa fa-envelope"></i>
+        <input type="email" placeholder="Email" required>
+    </div>
+    <div class="input-icon-group">
+        <i class="fa fa-user"></i>
+        <select required>
+            <option value="" disabled selected>Careers in Electrical Shops</option>
+            <option value="Electrical Sales Specialist / Sales Representative">Electrical Sales Specialist / Sales Representative</option>
+            <option value="Inventory / Stock Controller">Inventory / Stock Controller</option>
+            <option value="Electrical Technician / Repair Specialist">Electrical Technician / Repair Specialist</option>
+            <option value="Customer Service Representative">Customer Service Representative</option>
+            <option value="Shop Manager / Store Supervisor">Shop Manager / Store Supervisor</option>
+            <option value="Purchasing Agent / Procurement Specialist">Purchasing Agent / Procurement Specialist</option>
+            <option value="Electrical Estimator">Electrical Estimator</option>
+            <option value="Technical Trainer">Technical Trainer</option>
+            <option value="Accountant">Accountant</option>
+        </select>
+    </div>
+     <div class="input-icon-group">
+        <i class="fa fa-bullseye"></i>
+        <input type="text" placeholder="Objective" required>
+    </div>
+    <div class="input-icon-group">
+        <label for="cv-upload" style="color:#3b5fbf; font-weight:600;">
+            <i class="fa fa-upload"></i>
+        </label>
+        <input type="file" id="cv-upload" name="cv-upload" accept=".pdf,.doc,.docx" style="padding-left:40px;" placeholder="upload cv" required>
+    </div>
+    <br>
+    <button type="submit" class="submit-btn">Submit</button>
+</form>
+    </div>
 <script>
 // Sub-accordion toggle
 document.querySelectorAll('.sub-accordion').forEach(function(btn) {

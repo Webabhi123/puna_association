@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POONA ELECTRIC & ELECTRONICS ASSOCIATION (PEEA)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <style>
+        .dataTables_wrapper {
+            position: relative;
+            clear: both;
+            top: 52px;
+        }
+
+        .table-container {
+            display: flex;
+            justify-content: center;
+            /* Center horizontally */
+            padding-left: 40px;
+            /* Add space on the left */
+            padding-right: 40px;
+            
+        }
+
+        table.dataTable {
+    width: 100%;
+    margin: 0 auto;
+    clear: both;
+    border-collapse: separate;
+    border-spacing: 8px;
+}
+.dataTables_paginate {
+    white-space: nowrap;
+    display: flex;
+    gap: 8px; /* Optional: adds space between buttons */
+    align-items: center;
+    justify-content: flex-end; /* Or center, as you prefer */
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="left">
+            📞 7972579597 | 📧 peeapune1@gmail.com
+        </div>
+        <div class="right">
+            <a href="MemberLogin.html">Member's Login</a>
+            <a href="#">Member Search</a>
+            <a href="#">Just Click</a>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header">
+        <div class="logo">
+            <img src="brands-logo/PEEA_LOGO_1-removebg-preview.png" alt="Logo" />
+            <div class="logo-text">
+                <h1>Poona<span> Electric &</span> Electronics Association</h1>
+                <small>POONA ELECTRIC & ELECTRONICS ASSOCIATION (PEEA) </small>
+            </div>
+        </div>
+        <div class="search-bar">
+            <select>
+                <option>Product/Category</option>
+                <option>Wires</option>
+                <option>LEDs</option>
+            </select>
+            <input type="text" placeholder="Search by Brands or Products..." />
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+        <ul id="navbarMenu">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="#">ABOUT US</a>
+                <div class="dropdown">
+                    <!-- <a href="#">President's Desk</a> -->
+                    <a href="about.html" target="_blank">About us</a>
+                    <a href="about.html#key-initiatives">Key Initiatives</a>
+                    <a href="about.html#aims-objectives">History Of PEEA</a>
+                    <!-- <a href="#">History</a> -->
+                    <!-- <a href="#">Past President</a> -->
+                    <a href="about.html#facilities-member-services">Facility To Members</a>
+                </div>
+            </li>
+            <li><a href="#">COMMITTEE</a>
+                <div class="dropdown">
+                    <a href="managecommittee.html" target="_blank">Managing Committee</a>
+                    <a href="websitecommittee.html" target="_blank">Website Committee</a>
+                    <a href="activitycommittee.html" target="_blank">Activity Committee</a>
+                </div>
+            </li>
+            <li><a href="#">MEMBERSHIP</a>
+                <!-- <div class="dropdown">
+                    <a href="#">Member Login</a>
+                    <a href="#">Member Search</a>
+                    <a href="#">Become a Member</a>
+                </div> -->
+            </li>
+            <li><a href="#">CATEGORY</a>
+                <!-- <div class="dropdown">
+                    <a href="ProductPromotion.html" target="_blank">Product Promotion</a>
+                    <a href="TechnicalSupport.html" target="_blank">Technical Support</a>
+                    <a href="Consultancy.html" target="_blank">Consultancy</a>
+                    <a href="TradeEvent.html" target="_blank">Trade Events</a>
+                    <a href="Networking.html" target="_blank">NETWORKING</a>
+                </div> -->
+            </li>
+            <li><a href="#">NEWS & EVENTS</a>
+                <div class="dropdown">
+                    <a href="Exhibitions.html" target="_blank">Exhibitions</a>
+                    <a href="Conferences.html" target="_blank">Conferences</a>
+                    <a href="Webinar.html" target="_blank">Webinars</a>
+                    <a href="EventCalendar.html" target="_blank">Event Calendar</a>
+                    <a href="Awards.html" target="_blank">Awards</a>
+                    <a href="knowledge.html" target="_blank">Knowledge</a>
+                </div>
+            </li>
+            <li><a href="#">Media</a>
+                <div class="dropdown">
+                    <a href="Exhibitions.html" target="_blank">Photos</a>
+                    <a href="Conferences.html" target="_blank">Videos</a>
+                    <a href="Webinar.html" target="_blank">Inspiring Stories</a>
+                    <a href="EventCalendar.html" target="_blank">Blogs</a>
+                </div>
+            </li>
+<li><a href="Transport.html" target="_blank">TRANSPORT</a></li>
+            <li><a href="Download.html">DOWNLOAD</a></li>
+            <li><a href="contact.html" target="_blank">CONTACT US</a></li>
+        </ul>
+    </nav>
+    <!-- Your table -->
+     <section>
+    <div class="table-container">
+        <table id="myTable" class="display" style="background: white;">
+            <thead>
+                <tr>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Transport and Courier name</th>
+                    <th>Contact No.</th>
+                    <th>Address</th>
+                    <th>Website / Shipping Tracking URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PUNE</td>
+                    <td>NASHIK</td>
+                    <td>EXPRESS LOGISTICS</td>
+                    <td>9876543210</td>
+                    <td>NASHIK ROAD</td>
+                    <td>www.expresslogistics.com</td>
+                </tr>
+                <tr>
+                    <td>DELHI</td>
+                    <td>GURGAON</td>
+                    <td>FASTWAY COURIERS</td>
+                    <td>9123456780</td>
+                    <td>SECTOR 14</td>
+                    <td>www.fastway.in</td>
+                </tr>
+                <tr>
+                    <td>BANGALORE</td>
+                    <td>CHENNAI</td>
+                    <td>SOUTHERN TRANSPORT</td>
+                    <td>9988776655</td>
+                    <td>GUINDY</td>
+                    <td>www.southerntrans.com</td>
+                </tr>
+                <tr>
+                    <td>KOLKATA</td>
+                    <td>HOWRAH</td>
+                    <td>EASTERN MOVERS</td>
+                    <td>9001122334</td>
+                    <td>HOWRAH BRIDGE</td>
+                    <td>www.easternmovers.com</td>
+                </tr>
+                <tr>
+                    <td>HYDERABAD</td>
+                    <td>SECUNDERABAD</td>
+                    <td>CITY LINK TRANSPORT</td>
+                    <td>9012345678</td>
+                    <td>MG ROAD</td>
+                    <td>www.citylink.com</td>
+                </tr>
+                <tr>
+                    <td>AHMEDABAD</td>
+                    <td>VADODARA</td>
+                    <td>GUJARAT EXPRESS</td>
+                    <td>9871234560</td>
+                    <td>ALKAPURI</td>
+                    <td>www.gujaratexpress.in</td>
+                </tr>
+                <tr>
+                    <td>JAIPUR</td>
+                    <td>UDAIPUR</td>
+                    <td>RAJASTHAN ROADWAYS</td>
+                    <td>9822334455</td>
+                    <td>UDAIPUR CITY</td>
+                    <td>www.rajroadways.com</td>
+                </tr>
+                <tr>
+                    <td>LUCKNOW</td>
+                    <td>KANPUR</td>
+                    <td>UP CARGO</td>
+                    <td>9911223344</td>
+                    <td>GOMTI NAGAR</td>
+                    <td>www.upcargo.com</td>
+                </tr>
+                <tr>
+                    <td>INDORE</td>
+                    <td>BHOPAL</td>
+                    <td>MADHYA PRADESH LOGISTICS</td>
+                    <td>9933445566</td>
+                    <td>MP NAGAR</td>
+                    <td>www.mplogistics.com</td>
+                </tr>
+                <tr>
+                    <td>CHANDIGARH</td>
+                    <td>MOHALI</td>
+                    <td>NORTHWAY TRANSPORT</td>
+                    <td>9876540987</td>
+                    <td>PHASE 7</td>
+                    <td>www.northway.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </section>
+    <!-- Initialize DataTables -->
+    <script>
+        $(document).ready(function () {
+            var table = $('#myTable').DataTable();
+
+            // Apply the search for each column
+            $('#myTable thead tr:eq(1) th').each(function (i) {
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table
+                            .column(i)
+                            .search(this.value)
+                            .draw();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
