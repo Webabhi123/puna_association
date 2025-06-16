@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POONA ELECTRIC & ELECTRONICS ASSOCIATION (PEEA)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="script.js"></script>
+<style>
+:root {
+  --primary: #227093;
+  --secondary: #ff5252;
+  --background: #eee;
+  --highlight: #ffda79;
+  /* Theme color */
+  --theme: var(--primary);
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* body {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(auto-fit, min(100%, 30rem));
+  min-height: 100vh;
+  place-items: start;
+  gap: 1rem;
+  margin: 0;
+  padding: 1rem;
+  color: var(--primary);
+  background: var(--background);
+} */
+
+/* Core styles/functionality */
+.tab {
+  position: relative;
+}
+.tab input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.tab__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.35s;
+}
+.tab input:checked ~ .tab__content {
+  max-height: 100rem;
+}
+
+/* Visual styles */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 60vh;
+  margin-top: 40px;
+}
+.accordion {
+  color: var(--theme);
+  border: 2px solid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: 80%;
+  background: #fff;
+  margin: 0 auto;
+  box-shadow: 0 2px 12px #0001;
+}
+.tab__label,
+.tab__close {
+  display: flex;
+  color: white;
+  /* background: var(--theme); */
+  background-image: linear-gradient(to right, #686ee2, #33388d);
+  cursor: pointer;
+}
+.tab__label {
+  justify-content: space-between;
+  padding: 1rem;
+}
+.tab__label::after {
+  content: "\276F";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transform: rotate(90deg);
+  transition: all 0.35s;
+}
+.tab input:checked + .tab__label::after {
+  transform: rotate(270deg);
+}
+.tab__content p {
+  margin: 0;
+  padding: 1rem;
+}
+.tab__close {
+  justify-content: flex-end;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+}
+.accordion--radio {
+  --theme: var(--secondary);
+}
+a {
+  text-decoration: none;
+  color: #1a237e;
+}
+a:hover {
+  text-decoration: underline;
+}
+.sub-accordion {
+  background: #f3f6fa;
+  color: #222;
+  cursor: pointer;
+  padding: 12px 16px;
+  border: none;
+  outline: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.2s;
+  margin-top: 8px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sub-accordion.active, .sub-accordion:hover {
+  background: #e3e7fa;
+}
+.sub-panel {
+  display: none;
+  padding: 0 16px 12px 32px;
+  background: #fff;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Arrow animation */
+.tab input:not(:checked) + .tab__label:hover::after {
+  animation: bounce .5s infinite;
+}
+@keyframes bounce {
+  25% {
+    transform: rotate(90deg) translate(.25rem);
+  }
+  75% {
+    transform: rotate(90deg) translate(-.25rem);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="left">
+            <i class="fa-solid fa-phone"></i> 7972579597 &nbsp;|&nbsp; <i class="fa-solid fa-envelope"></i> peeapune1@gmail.com
+        </div>
+        <div class="right">
+            <a href="MemberLogin.html">Member's Login</a>
+            <a href="#">Member Search</a>
+            <a href="#">Just Click</a>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header">
+        <div class="logo">
+            <img src="brands-logo/PEEA_LOGO_1-removebg-preview.png" alt="Logo" />
+            <div class="logo-text">
+                <h1>Poona<span> Electric &</span> Electronics Association</h1>
+                <small>POONA ELECTRIC & ELECTRONICS ASSOCIATION (PEEA) </small>
+            </div>
+        </div>
+        <div class="search-bar">
+            <select>
+                <option>Product/Category</option>
+                <option>Wires</option>
+                <option>LEDs</option>
+            </select>
+            <input type="text" placeholder="Search by Brands or Products..." />
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+<nav class="navbar">
+        <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+        <ul id="navbarMenu">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="#">ABOUT US</a>
+                <div class="dropdown">
+                    <!-- <a href="#">President's Desk</a> -->
+                    <a href="about.html" target="_blank">About us</a>
+                    <a href="about.html#key-initiatives">Key Initiatives</a>
+<a href="about.html#aims-objectives">History Of PEEA</a>
+                    <!-- <a href="#">History</a> -->
+                    <!-- <a href="#">Past President</a> -->
+                    <a href="about.html#facilities-member-services">Facility To Members</a>
+                </div>
+            </li>
+            <li><a href="#">COMMITTEE</a>
+                <div class="dropdown">
+                    <a href="managecommittee.html" target="_blank">Managing Committee</a>
+                    <a href="websitecommittee.html" target="_blank">Website Committee</a>
+                    <a href="activitycommittee.html" target="_blank">Activity Committee</a>
+                </div>
+            </li>
+            <li><a href="#">MEMBERSHIP</a>
+                <!-- <div class="dropdown">
+                    <a href="#">Member Login</a>
+                    <a href="#">Member Search</a>
+                    <a href="#">Become a Member</a>
+                </div> -->
+            </li>
+            <li><a href="#">CATEGORY</a>
+                <!-- <div class="dropdown">
+                    <a href="ProductPromotion.html" target="_blank">Product Promotion</a>
+                    <a href="TechnicalSupport.html" target="_blank">Technical Support</a>
+                    <a href="Consultancy.html" target="_blank">Consultancy</a>
+                    <a href="TradeEvent.html" target="_blank">Trade Events</a>
+                    <a href="Networking.html" target="_blank">NETWORKING</a>
+                </div> -->
+            </li>
+            <li><a href="#">NEWS & EVENTS</a>
+                <div class="dropdown">
+                    <a href="Exhibitions.html" target="_blank">Exhibitions</a>
+                    <a href="Conferences.html" target="_blank">Conferences</a>
+                    <a href="Webinar.html" target="_blank">Webinars</a>
+                    <a href="EventCalendar.html" target="_blank">Event Calendar</a>
+                    <a href="Awards.html" target="_blank">Awards</a>
+                    <a href="knowledge.html" target="_blank">Knowledge</a>
+            </div>
+            </li>
+            <li><a href="#">Media</a>
+                <div class="dropdown">
+                    <a href="Exhibitions.html" target="_blank">Photos</a>
+                    <a href="Conferences.html" target="_blank">Videos</a>
+                    <a href="Webinar.html" target="_blank">Inspiring Stories</a>
+                    <a href="EventCalendar.html" target="_blank">Blogs</a>
+            </div>
+            </li>
+            <li><a href="Career.html" target="_blank">CAREERS</a></li>
+            <li><a href="Download.html">DOWNLOAD</a></li>
+            <li><a href="contact.html" target="_blank">CONTACT US</a></li>
+        </ul>
+    </nav>
+<div class="center-container">
+  <section class="accordion">
+    <div class="tab">
+      <input type="checkbox" id="pricelist">
+      <label for="pricelist" class="tab__label">Pricelist</label>
+      <div class="tab__content">
+        <p>Latest product and service pricelists will be available here.</p>
+      </div>
+    </div>
+    <div class="tab">
+      <input type="checkbox" id="training">
+      <label for="training" class="tab__label">Training courses</label>
+      <div class="tab__content">
+        <p>Find details about upcoming and ongoing training courses.</p>
+      </div>
+    </div>
+    <div class="tab">
+      <input type="checkbox" id="jobsearch">
+      <label for="jobsearch" class="tab__label">Job Search</label>
+      <div class="tab__content">
+        <p>Search for jobs and career opportunities in the industry.</p>
+      </div>
+    </div>
+    <div class="tab">
+      <input type="checkbox" id="transporters">
+      <label for="transporters" class="tab__label">Transporters</label>
+      <div class="tab__content">
+        <p>Contact details and information about transporters.</p>
+      </div>
+    </div>
+<div class="tab">
+  <input type="checkbox" id="useful-links">
+  <label for="useful-links" class="tab__label">Useful Links</label>
+  <div class="tab__content">
+    <button class="sub-accordion">Travel <span>&#9660;</span></button>
+    <div class="sub-panel">
+      <ul>
+        <li><a href="https://www.aai.aero/en/airports/pune" target="_blank">Pune Airport</a></li>
+        <li><a href="https://www.punemetrorail.org/" target="_blank">Pune Metro Rail</a></li>
+        <li><a href="https://pmpml.org/" target="_blank">PMPML</a></li>
+        <li><a href="https://www.indianrail.gov.in/" target="_blank">Indian Railways</a></li>
+        <li><a href="https://www.irctc.co.in/" target="_blank">IRCTC</a></li>
+      </ul>
+    </div>
+    <button class="sub-accordion">Government <span>&#9660;</span></button>
+    <div class="sub-panel">
+      <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Emblem_of_India.svg/1200px-Emblem_of_India.svg.png" alt="Government" style="display:block;max-width:80px;margin:0 auto 10px;"> -->
+      <ul>
+        <li><a href="https://www.gst.gov.in/" target="_blank">GST Portal</a></li>
+        <li><a href="https://incometaxindia.gov.in/Pages/default.aspx" target="_blank">Income Tax India</a></li>
+        <li><a href="https://pune.gov.in/" target="_blank">Pune District</a></li>
+        <li><a href="https://www.pmc.gov.in/en" target="_blank">Pune Municipal Corporation</a></li>
+        <li><a href="https://www.pcmcindia.gov.in/" target="_blank">PCMC</a></li>
+        <li><a href="https://pune.dcourts.gov.in/" target="_blank">Pune District Court</a></li>
+        <li><a href="https://www.imdpune.gov.in/" target="_blank">IMD Pune</a></li>
+        <li><a href="https://pune.cantt.gov.in/" target="_blank">Pune Cantonment</a></li>
+        <li><a href="https://maharashtratourism.gov.in/districts/pune/" target="_blank">Maharashtra Tourism - Pune</a></li>
+        <li><a href="https://punepolice.gov.in/" target="_blank">Pune Police</a></li>
+        <li><a href="https://www.mahadiscom.in/en/home/" target="_blank">MahaDiscom</a></li>
+      </ul>
+    </div>
+    <button class="sub-accordion">News <span>&#9660;</span></button>
+    <div class="sub-panel">
+      <ul>
+        <li><a href="https://www.punekarnews.in/" target="_blank">Punekar News</a></li>
+        <li><a href="https://punemirror.com/" target="_blank">Pune Mirror</a></li>
+        <li><a href="https://epaper.lokmat.com/main-editions/Pune%20Main/-1/1" target="_blank">Lokmat Epaper</a></li>
+        <li><a href="https://epaper.loksatta.com/" target="_blank">Loksatta Epaper</a></li>
+        <li><a href="https://www.jagran.com/maharashtra/pune" target="_blank">Jagran Pune</a></li>
+      </ul>
+    </div>
+    <button class="sub-accordion">Education <span>&#9660;</span></button>
+    <div class="sub-panel">
+      <ul>
+        <li><a href="http://www.unipune.ac.in/" target="_blank">Savitribai Phule Pune University</a></li>
+        <li><a href="https://dhepune.gov.in/" target="_blank">DHE Pune</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+  </section>
+</div>
+<script>
+// Sub-accordion toggle
+document.querySelectorAll('.sub-accordion').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    this.classList.toggle('active');
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+      this.querySelector('span').innerHTML = "&#9660;";
+    } else {
+      panel.style.display = "block";
+      this.querySelector('span').innerHTML = "&#9650;";
+    }
+  });
+});
+</script>
+
+
+    </body>

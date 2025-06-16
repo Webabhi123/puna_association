@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POONA ELECTRIC & ELECTRONICS ASSOCIATION (PEEA)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylee.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+     <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <!-- Toastr JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>    
+    <style>
+    .input-icon-group {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    min-width: 200px;
+    margin-right: 1%;
+    margin-bottom: 18px;
+    vertical-align: top;
+}
+.input-icon-group:last-child {
+    margin-right: 0;
+}
+.input-icon-group i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color:#3b5fbf;
+    /* color: linear-gradient(to right, #686ee2, #33388d); */
+    font-size: 18px;
+    pointer-events: none;
+    z-index: 2;
+}
+.input-icon-group input,
+.input-icon-group select {
+    width: 100%;
+    padding: 12px 12px 12px 40px; /* left padding for icon */
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+.input-icon-group input:focus,
+.input-icon-group select:focus {
+    border-color: #d32f2f;
+    box-shadow: 0 0 0 2px #ffd6d6;
+}
+.contact-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+}
+.submit-btn {
+    grid-column: 1 / -1;
+    padding: 14px;
+    background: #3b5fbf;;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 50%;
+}
+
+.submit-btn:hover {
+    background: #c0392b;
+}
+@media (max-width: 900px) {
+    .contact-form-row, .input-icon-group {
+        width: 100%;
+        min-width: 0;
+        margin-right: 0;
+        display: block;
+    }
+}
+.toast-success .toast-icon,
+.toast-info .toast-icon,
+.toast-warning .toast-icon,
+.toast-error .toast-icon {
+    display: none !important;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="left">
+<i class="fa-solid fa-phone"></i> 7972579597 &nbsp;|&nbsp; <i class="fa-solid fa-envelope"></i> peeapune1@gmail.com
+        </div>
+        <div class="right">
+            <a href="MemberLogin.html">Member's Login</a>
+            <a href="#">Member Search</a>
+            <a href="#">Just Click</a>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header">
+        <div class="logo">
+            <img src="brands-logo/PEEA_LOGO_1-removebg-preview.png" alt="Logo" />
+            <div class="logo-text">
+                <h1>Poona<span> Electric &</span> Electronics Association</h1>
+                <small>POONA ELECTRIC & ELECTRONICS ASSOCIATION (PEEA) </small>
+            </div>
+        </div>
+        <div class="search-bar">
+            <select>
+                <option>Product/Category</option>
+                <option>Wires</option>
+                <option>LEDs</option>
+            </select>
+            <input type="text" placeholder="Search by Brands or Products..." />
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+<nav class="navbar">
+        <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+        <ul id="navbarMenu">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="#">ABOUT US</a>
+                <div class="dropdown">
+                    <!-- <a href="#">President's Desk</a> -->
+                    <a href="about.html" target="_blank">About us</a>
+                    <a href="about.html#key-initiatives">Key Initiatives</a>
+<a href="about.html#aims-objectives">History Of PEEA</a>
+                    <!-- <a href="#">History</a> -->
+                    <!-- <a href="#">Past President</a> -->
+                    <a href="about.html#facilities-member-services">Facility To Members</a>
+                </div>
+            </li>
+            <li><a href="#">COMMITTEE</a>
+                <div class="dropdown">
+                    <a href="managecommittee.html" target="_blank">Managing Committee</a>
+                    <a href="websitecommittee.html" target="_blank">Website Committee</a>
+                    <a href="activitycommittee.html" target="_blank">Activity Committee</a>
+                </div>
+            </li>
+            <li><a href="#">MEMBERSHIP</a>
+                <!-- <div class="dropdown">
+                    <a href="#">Member Login</a>
+                    <a href="#">Member Search</a>
+                    <a href="#">Become a Member</a>
+                </div> -->
+            </li>
+            <li><a href="#">CATEGORY</a>
+                <!-- <div class="dropdown">
+                    <a href="ProductPromotion.html" target="_blank">Product Promotion</a>
+                    <a href="TechnicalSupport.html" target="_blank">Technical Support</a>
+                    <a href="Consultancy.html" target="_blank">Consultancy</a>
+                    <a href="TradeEvent.html" target="_blank">Trade Events</a>
+                    <a href="Networking.html" target="_blank">NETWORKING</a>
+                </div> -->
+            </li>
+            <li><a href="#">NEWS & EVENTS</a>
+                <div class="dropdown">
+                    <a href="Exhibitions.html" target="_blank">Exhibitions</a>
+                    <a href="Conferences.html" target="_blank">Conferences</a>
+                    <a href="Webinar.html" target="_blank">Webinars</a>
+                    <a href="EventCalendar.html" target="_blank">Event Calendar</a>
+                    <a href="Awards.html" target="_blank">Awards</a>
+                    <a href="knowledge.html" target="_blank">Knowledge</a>
+            </div>
+            </li>
+            <li><a href="#">Media</a>
+                <div class="dropdown">
+                    <a href="Exhibitions.html" target="_blank">Photos</a>
+                    <a href="Conferences.html" target="_blank">Videos</a>
+                    <a href="Webinar.html" target="_blank">Inspiring Stories</a>
+                    <a href="EventCalendar.html" target="_blank">Blogs</a>
+            </div>
+            </li>
+            <li><a href="Career.html" target="_blank">CAREERS</a></li>
+            <li><a href="Download.html">DOWNLOAD</a></li>
+            <li><a href="contact.html" target="_blank">CONTACT US</a></li>
+        </ul>
+    </nav>
+    <div class="form-container">
+        <!-- <h3 style="text-align: center; color:#3b5fbf ">Careers in Electrical Shops</h3><br> -->
+    <form id="careerForm" style="text-align: center; background: white;">
+    <div class="input-icon-group">
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="Your Name" required>
+    </div>
+    <div class="input-icon-group">
+        <i class="fa fa-phone"></i>
+        <input type="tel" placeholder="Phone Number" required>
+    </div>
+    <div class="input-icon-group">
+        <i class="fa fa-envelope"></i>
+        <input type="email" placeholder="Email" required>
+    </div>
+    <div class="input-icon-group">
+        <i class="fa fa-user"></i>
+        <select required>
+            <option value="" disabled selected>Careers in Electrical Shops</option>
+            <option value="Electrical Sales Specialist / Sales Representative">Electrical Sales Specialist / Sales Representative</option>
+            <option value="Inventory / Stock Controller">Inventory / Stock Controller</option>
+            <option value="Electrical Technician / Repair Specialist">Electrical Technician / Repair Specialist</option>
+            <option value="Customer Service Representative">Customer Service Representative</option>
+            <option value="Shop Manager / Store Supervisor">Shop Manager / Store Supervisor</option>
+            <option value="Purchasing Agent / Procurement Specialist">Purchasing Agent / Procurement Specialist</option>
+            <option value="Electrical Estimator">Electrical Estimator</option>
+            <option value="Technical Trainer">Technical Trainer</option>
+            <option value="Accountant">Accountant</option>
+        </select>
+    </div>
+     <div class="input-icon-group">
+        <i class="fa fa-bullseye"></i>
+        <input type="text" placeholder="Objective" required>
+    </div>
+    <div class="input-icon-group">
+        <label for="cv-upload" style="color:#3b5fbf; font-weight:600;">
+            <i class="fa fa-upload"></i>
+        </label>
+        <input type="file" id="cv-upload" name="cv-upload" accept=".pdf,.doc,.docx" style="padding-left:40px;" placeholder="upload cv" required>
+    </div>
+    <br>
+    <button type="submit" class="submit-btn">Submit</button>
+</form>
+    </div>
+    <script>
+document.getElementById('careerForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    toastr.success('Thank you for submitting your career details! We will contact you soon.');
+    this.reset();
+});
+</script>
+    </body>
